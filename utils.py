@@ -2,17 +2,21 @@ from person import Person
 from bank_account import BankAccount
 
 def person_data():
-    name = input("Enter the person's name:\n")
+    print("Enter the person's name:")
+    name = input()
     person = Person(name)
 
     while True:
-        acc_number = input("Enter a 4-digit account number:\n")
-        balance = float(input("Enter the initial balance:\n"))
+        print("Enter a 4-digit account number:")
+        acc_number = input()
+        print("Enter the initial balance:")
+        balance = float(input())
 
         account = BankAccount(acc_number, balance)
         person.add_account(account)
 
-        done = input("Are you done adding accounts? (yes/no):\n")
+        print("Are you done adding accounts? (yes/no):")
+        done = input()
         if done.lower() == "yes":
             break
 
